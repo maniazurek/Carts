@@ -1,98 +1,74 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Button } from "../utils/styledComponents";
+import {
+  SingleCartContainer,
+  TextContainer,
+  Title,
+  Description,
+  List,
+  Button,
+  Overlay,
+  Window,
+  CloseButton,
+} from "../utils/styledComponents";
 
 const SingleCart = ({
   id,
   listOfProducts,
   numberOfCategories,
-  handleOnDelete,
+  deleteCartData,
 }) => {
   const [isCartOpened, setIsCartOpened] = useState(false);
 
-  const handleOpenCart = () => {
+  const handleOpenCart = (event) => {
+    event.stopPropagation();
     setIsCartOpened(true);
   };
 
   const deleteCart = (id) => {
-    handleOnDelete(id);
+    deleteCartData(id);
     setIsCartOpened(false);
   };
 
+  useEffect(() => {
+    window.addEventListener("click", () => setIsCartOpened(false));
+  }, []);
+
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div
-          style={{
-            backgroundColor: "#fff",
-            borderRadius: "5px",
-            margin: "5px",
-            width: "500px",
-            padding: "5px",
-            overflowY: "auto",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div>{id}</div>
-            <div>{numberOfCategories}</div>
-            <Button onClick={handleOpenCart} style={{ cursor: "pointer" }}>
-              Details
-            </Button>
-          </div>
-        </div>
-        {isCartOpened && (
-          <div
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              right: "0",
-              bottom: "0",
-              background: "rgba(0, 0, 0, 0.35)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <div
+      <SingleCartContainer>
+        <TextContainer>
+          <Title>Cart ID:</Title>
+          <Description>{id}</Description>
+        </TextContainer>
+        <TextContainer>
+          <Title>Number of categories:</Title>
+          <Description>{numberOfCategories}</Description>
+        </TextContainer>
+
+        <Button onClick={handleOpenCart}>Details</Button>
+      </SingleCartContainer>
+
+      {isCartOpened && (
+        <Overlay>
+          <Window>
+            {listOfProducts.map((product) => {
+              return <div key={product.id}>{product.title}</div>;
+            })}
+            <CloseButton>X</CloseButton>
+            <Button
+              onClick={() => deleteCart(id)}
               style={{
-                width: "700px",
-                height: "500px",
-                position: "relative",
-                background: "#fff",
-                borderRadius: "15px",
-                padding: "15px",
+                position: "absolute",
+                bottom: "15px",
+                right: "15px",
               }}
             >
-              {listOfProducts.map((product) => {
-                return <div key={product.id}>{product.title}</div>;
-              })}
-              <div
-                onClick={() => setIsCartOpened(false)}
-                style={{
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "15px",
-                  right: "15px",
-                }}
-              >
-                X
-              </div>
-              <Button
-                onClick={() => deleteCart(id)}
-                style={{
-                  position: "absolute",
-                  bottom: "15px",
-                  right: "15px",
-                  cursor: "pointer",
-                }}
-              >
-                Delete Cart
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
+              Delete Cart
+            </Button>
+          </Window>
+        </Overlay>
+      )}
     </>
   );
 };

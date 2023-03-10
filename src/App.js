@@ -1,14 +1,17 @@
 import React from "react";
-import Main from "./pages/Main";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./pages/CartsPage";
+import Welcome from "./pages/Welcome";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <div>
-        <Main />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/*" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
