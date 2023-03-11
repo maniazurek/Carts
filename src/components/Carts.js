@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SingleCart from "../components/SingleCart";
-import CartForm from "../components/CartForm";
+import SingleCart from "./SingleCart";
+import CartForm from "./CartForm";
 import { BASE_API_URL } from "../utils/commons";
 import {
   MainLayout,
@@ -9,15 +9,9 @@ import {
   Overlay,
 } from "../utils/styledComponents";
 
-const Main = () => {
+const Carts = () => {
   const [cartsData, setCartsData] = useState([]);
   const [isFormOpen, setIsFormOpen] = useState(false);
-
-  console.log(cartsData);
-
-  useEffect(() => {
-    window.addEventListener("click", () => setIsFormOpen(false));
-  }, []);
 
   useEffect(() => {
     getCartsData();
@@ -61,7 +55,6 @@ const Main = () => {
 
   const handleOpenForm = (event) => {
     setIsFormOpen(true);
-    event.stopPropagation();
   };
 
   const handleCloseForm = () => {
@@ -111,4 +104,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Carts;

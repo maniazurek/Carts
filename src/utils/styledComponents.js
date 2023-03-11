@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Button = styled.button`
   color: #000;
@@ -19,6 +20,7 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `;
 
 export const Window = styled.div`
@@ -75,5 +77,45 @@ export const List = styled.p`
 `;
 
 export const MainLayout = styled.div`
-  margin: 50px;
+  margin-left: 240px;
+  padding: 57.2px;
+`;
+
+export const SideNavigation = styled.nav`
+  width: 192px;
+  height: 100%;
+  background-color: #8fb593;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 24px;
+`;
+
+export const NavigationHeader = styled.h1`
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+`;
+
+export const NavigationItemsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`;
+
+export const NavLinkElement = styled(NavLink)`
+  &:hover h3,
+  &:focus h3,
+  &.active h3 {
+    border-radius: 10px;
+    color: #8fb593;
+    background-color: #fff;
+  }
+`;
+
+export const NavigationItem = styled.h3`
+  color: #fff;
+  font-size: 15px;
+  margin: 0px;
+  padding: 7px;
 `;

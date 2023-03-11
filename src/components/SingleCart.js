@@ -21,7 +21,6 @@ const SingleCart = ({
   const [isCartOpened, setIsCartOpened] = useState(false);
 
   const handleOpenCart = (event) => {
-    event.stopPropagation();
     setIsCartOpened(true);
   };
 
@@ -29,10 +28,6 @@ const SingleCart = ({
     deleteCartData(id);
     setIsCartOpened(false);
   };
-
-  useEffect(() => {
-    window.addEventListener("click", () => setIsCartOpened(false));
-  }, []);
 
   return (
     <>
@@ -55,7 +50,7 @@ const SingleCart = ({
             {listOfProducts.map((product) => {
               return <div key={product.id}>{product.title}</div>;
             })}
-            <CloseButton>X</CloseButton>
+            <CloseButton onClick={() => setIsCartOpened(false)}>X</CloseButton>
             <Button
               onClick={() => deleteCart(id)}
               style={{
