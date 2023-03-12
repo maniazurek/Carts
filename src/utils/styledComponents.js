@@ -56,6 +56,7 @@ export const SingleCartContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: start;
 `;
 
 export const TextContainer = styled.div`
