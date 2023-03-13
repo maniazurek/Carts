@@ -9,9 +9,10 @@ const Welcome = () => {
     navigate("/carts");
   };
   return (
-    <MainLayout style={{margin: "0"}}>
+    <MainLayout style={{ margin: "0" }}>
       <div>Welcome</div>
       <Button onClick={onStart}>See the result</Button>
+   
     </MainLayout>
   );
 };

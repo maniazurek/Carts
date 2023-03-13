@@ -4,15 +4,14 @@ import { SideNavigation, NavigationHeader } from "../utils/styledComponents";
 import NavigationItems from "./NaviationItems";
 
 const Navigation = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const onWelcomePageNavigate = () => {
-      navigate("/");
-    };
+  const onWelcomePageNavigate = () => {
+    navigate("/");
+  };
 
   return (
     <SideNavigation>
-      <NavigationHeader onClick={onWelcomePageNavigate}>Welcome</NavigationHeader>
       <NavigationItems />
     </SideNavigation>
   );

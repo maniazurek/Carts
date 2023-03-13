@@ -14,11 +14,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #faf0e6;
+  background-color: #eef3f6;
   height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.react-pdf__Page__textContent {
+  display: none;
 }
