@@ -4,6 +4,7 @@ import CartForm from "./CartForm";
 import { BASE_API_URL } from "../utils/commons";
 import {
   MainLayout,
+  Header,
   CartsContainer,
   Button,
   Overlay,
@@ -53,7 +54,7 @@ const Carts = () => {
       .then(() => getCartsData());
   };
 
-  const handleOpenForm = (event) => {
+  const handleOpenForm = () => {
     setIsFormOpen(true);
   };
 
@@ -63,7 +64,7 @@ const Carts = () => {
 
   return (
     <MainLayout>
-      <div>LIST OF CARTS:</div>
+      <Header>LIST OF CARTS:</Header>
       <CartsContainer>
         {cartsData.map((cart) => {
           return (
@@ -90,15 +91,16 @@ const Carts = () => {
         onClick={(event) => handleOpenForm(event)}
         style={{
           borderRadius: "50%",
-          position: "absolute",
-          bottom: "40px",
-          right: "40px",
+          position: "sticky",
           width: "60px",
           height: "60px",
           fontSize: "20px",
+          margin: "0",
+          bottom: "30px",
+          marginLeft: "1180px",
         }}
       >
-        +
+        <i class="fa fa-plus"></i>
       </Button>
     </MainLayout>
   );

@@ -50,7 +50,9 @@ const SingleCart = ({
             {listOfProducts.map((product) => {
               return <div key={product.id}>{product.title}</div>;
             })}
-            <CloseButton onClick={() => setIsCartOpened(false)}>X</CloseButton>
+            <CloseButton>
+              <i class="fa fa-close" onClick={() => setIsCartOpened(false)}></i>
+            </CloseButton>
             <Button
               onClick={() => deleteCart(id)}
               style={{

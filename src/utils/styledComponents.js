@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const Header = styled.h2`
+  color: #2c2c31;
+  margin-top: 0;
+  margin-bottom: 20px;
+`;
+
 export const Button = styled.button`
   color: #fff;
   background-color: #2c2c31;
@@ -38,29 +44,31 @@ export const CloseButton = styled.div`
   position: absolute;
   top: 15px;
   right: 15px;
+  font-size: 25px;
 `;
 
 export const CartsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 10px;
+  overflow-y: auto;
 `;
 
 export const SingleCartContainer = styled.div`
   background-color: #fff;
   border-radius: 5px;
-  width: 100px;
-  height: 200px;
+  width: 1100px;
+  height: 30px;
   padding: 10px 30px;
-  overflow-y: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   align-items: center;
 `;
