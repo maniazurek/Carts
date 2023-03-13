@@ -98,6 +98,9 @@ const Carts = () => {
           margin: "0",
           bottom: "30px",
           marginLeft: "1180px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <i class="fa fa-plus"></i>
