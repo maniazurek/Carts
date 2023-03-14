@@ -33,7 +33,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: -639px;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.35);
   display: flex;
   justify-content: center;
@@ -92,6 +92,7 @@ export const TextContainer = styled.div`
 export const Title = styled.p`
   font-size: 15px;
   margin: 0;
+  font-weight: bold;
 `;
 
 export const Description = styled.p`
@@ -104,7 +105,8 @@ export const List = styled.p`
 
 export const MainLayout = styled.div`
   margin-left: 148px;
-  padding: 55px;
+  padding: 55px 55px 0px 55px;
+  overflow-x: hidden;
 `;
 
 export const SideNavigation = styled.nav`

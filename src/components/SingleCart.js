@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import {
   SingleCartContainer,
@@ -16,7 +16,7 @@ import LineGraph from "./LineGraph";
 const SingleCart = ({
   id,
   listOfProducts,
-  numberOfCategories,
+  numberOfProducts,
   deleteCartData,
 }) => {
   const [isCartOpened, setIsCartOpened] = useState(false);
@@ -38,8 +38,8 @@ const SingleCart = ({
           <Description>{id}</Description>
         </TextContainer>
         <TextContainer>
-          <Title>Number of categories:</Title>
-          <Description>{numberOfCategories}</Description>
+          <Title>Number of products:</Title>
+          <Description>{numberOfProducts}</Description>
         </TextContainer>
 
         <Button onClick={handleOpenCart}>Details</Button>
@@ -48,9 +48,12 @@ const SingleCart = ({
       {isCartOpened && (
         <Overlay>
           <Window>
-            <Title style={{ marginBottom: "30px", fontSize: "25px" }}>
-              Details of cart ID: {id}
-            </Title>
+            <TextContainer style={{ marginBottom: "30px" }}>
+              <Title style={{ fontSize: "25px" }}>Details of cart ID:</Title>
+              <Description style={{ fontSize: "25px", margin: "0" }}>
+                {id}
+              </Description>
+            </TextContainer>
             <CloseButton>
               <i class="fa fa-close" onClick={() => setIsCartOpened(false)}></i>
             </CloseButton>

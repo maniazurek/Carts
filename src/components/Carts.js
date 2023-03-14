@@ -32,22 +32,13 @@ const Carts = () => {
       .then(() => getCartsData());
   };
 
-  const addCartData = () => {
+  const addCartData = (userId, products) => {
     fetch(`${BASE_API_URL}/add`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        userId: 1,
-        products: [
-          {
-            id: 1,
-            quantity: 1,
-          },
-          {
-            id: 50,
-            quantity: 2,
-          },
-        ],
+        userId,
+        products,
       }),
     })
       .then((res) => res.json())
@@ -62,6 +53,8 @@ const Carts = () => {
     setIsFormOpen(false);
   };
 
+  console.log(cartsData);
+
   return (
     <MainLayout>
       <Header>LIST OF CARTS:</Header>
@@ -72,7 +65,7 @@ const Carts = () => {
               key={cart.id}
               id={cart.id}
               listOfProducts={cart.products}
-              numberOfCategories={cart.products.length}
+              numberOfProducts={cart.products.length}
               deleteCartData={deleteCartData}
             />
           );
@@ -84,6 +77,7 @@ const Carts = () => {
           <CartForm
             handleCloseForm={handleCloseForm}
             addCartData={addCartData}
+            cartsData={cartsData}
           />
         </Overlay>
       )}
