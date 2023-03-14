@@ -42,6 +42,7 @@ export const Window = styled.div`
   padding: 25px;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;

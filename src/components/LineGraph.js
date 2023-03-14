@@ -6,13 +6,17 @@ import { Line } from "react-chartjs-2";
 Chart.register(CategoryScale);
 
 const LineGraph = ({ listOfProducts }) => {
-  console.log(listOfProducts);
+
   const [graphData, setGraphData] = useState({
     labels: listOfProducts.map((data) => data.title),
     datasets: [
       {
-        label: "Prices",
+        label: "Price",
         data: listOfProducts.map((data) => data.price),
+      },
+      {
+        label: "Discounted Price",
+        data: listOfProducts.map((data) => data.discountedPrice),
       },
     ],
   });

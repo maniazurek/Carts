@@ -48,6 +48,9 @@ const SingleCart = ({
       {isCartOpened && (
         <Overlay>
           <Window>
+            <Title style={{ marginBottom: "30px", fontSize: "25px" }}>
+              Details of cart ID: {id}
+            </Title>
             <CloseButton>
               <i class="fa fa-close" onClick={() => setIsCartOpened(false)}></i>
             </CloseButton>
