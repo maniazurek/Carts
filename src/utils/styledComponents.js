@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const MainTitle = styled.p`
+  font-size: 50px;
+  color: #2c2c31;
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 562px;
+`;
+
 export const Header = styled.h2`
   color: #2c2c31;
   margin-top: 0;
@@ -25,7 +33,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -639px;
   background: rgba(0, 0, 0, 0.35);
   display: flex;
   justify-content: center;
