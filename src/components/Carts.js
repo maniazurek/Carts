@@ -103,7 +103,7 @@ const Carts = () => {
           alignItems: "center",
         }}
       >
-        <i class="fa fa-plus"></i>
+        <i className="fa fa-plus"></i>
       </Button>
     </MainLayout>
   );

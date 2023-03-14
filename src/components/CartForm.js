@@ -1,5 +1,5 @@
 import React from "react";
-import { Window, Button, CloseButton } from "../utils/styledComponents";
+import { Window, Button, CloseButton, Title } from "../utils/styledComponents";
 
 const CartForm = ({ handleCloseForm, addCartData }) => {
   const addNewCart = () => {
@@ -10,13 +10,19 @@ const CartForm = ({ handleCloseForm, addCartData }) => {
     <Window>
       <div>Form</div>
       <CloseButton>
-        <i class="fa fa-close" onClick={handleCloseForm}></i>
+        <span class="fa fa-close" onClick={handleCloseForm}></span>
       </CloseButton>
       <Button
         onClick={addNewCart}
-        style={{ position: "absolute", bottom: "15px", right: "15px" }}
+        style={{
+          position: "absolute",
+          bottom: "25px",
+          right: "25px",
+          padding: "8px",
+        }}
       >
-        Add
+        <span className="fas fa-shopping-cart	"></span>
+        <Title>Add Cart</Title>
       </Button>
     </Window>
   );

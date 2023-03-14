@@ -14,6 +14,10 @@ export const Button = styled.button`
   border: 1px solid #2c2c31;
   border-radius: 6px;
   padding: 5px;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Overlay = styled.div`
@@ -35,15 +39,18 @@ export const Window = styled.div`
   position: relative;
   background: #fff;
   borderradius: 15px;
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CloseButton = styled.div`
   cursor: pointer;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   font-size: 25px;
 `;
 
@@ -75,6 +82,7 @@ export const TextContainer = styled.div`
 
 export const Title = styled.p`
   font-size: 15px;
+  margin: 0;
 `;
 
 export const Description = styled.p`

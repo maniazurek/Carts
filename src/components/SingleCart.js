@@ -11,6 +11,7 @@ import {
   Window,
   CloseButton,
 } from "../utils/styledComponents";
+import LineGraph from "./LineGraph";
 
 const SingleCart = ({
   id,
@@ -47,9 +48,6 @@ const SingleCart = ({
       {isCartOpened && (
         <Overlay>
           <Window>
-            {listOfProducts.map((product) => {
-              return <div key={product.id}>{product.title}</div>;
-            })}
             <CloseButton>
               <i class="fa fa-close" onClick={() => setIsCartOpened(false)}></i>
             </CloseButton>
@@ -57,12 +55,15 @@ const SingleCart = ({
               onClick={() => deleteCart(id)}
               style={{
                 position: "absolute",
-                bottom: "15px",
-                right: "15px",
+                bottom: "25px",
+                right: "25px",
+                padding: "8px",
               }}
             >
-              Delete Cart
+              <span class="fa fa-trash-o"></span>
+              <Title>Delete Cart</Title>
             </Button>
+            <LineGraph listOfProducts={listOfProducts} />
           </Window>
         </Overlay>
       )}
