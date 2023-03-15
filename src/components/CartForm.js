@@ -7,13 +7,17 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
   const [productQuantity, setProductQuantity] = useState("");
   const [products, setProducts] = useState([]);
 
-  const addNewCart = (event) => {
+  const addNewProduct = (event) => {
+    event.preventDefault();
     const newProduct = {
       id: productId,
       quantity: productQuantity,
     };
     setProducts([...products, newProduct]);
-    console.log(newProduct);
+    console.log(products);
+  };
+
+  const addNewCart = (event) => {
     addCartData(userId, products);
     handleCloseForm();
   };
@@ -27,14 +31,6 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
           placeholder="Type user ID"
           value={userId}
           onChange={(event) => setUserId(event.target.value)}
-        />
-        <input
-          value={productId}
-          onChange={(event) => setProductId(event.target.value)}
-        />
-        <input
-          value={productQuantity}
-          onChange={(event) => setProductQuantity(event.target.value)}
         />
 
         <select>
@@ -57,6 +53,17 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
           <span className="fas fa-shopping-cart	"></span>
           <Title>Add Cart</Title>
         </Button>
+      </form>
+      <form onSubmit={addNewProduct}>
+        <input
+          value={productId}
+          onChange={(event) => setProductId(event.target.value)}
+        />
+        <input
+          value={productQuantity}
+          onChange={(event) => setProductQuantity(event.target.value)}
+        />
+        <button>Add product</button>
       </form>
     </Window>
   );
