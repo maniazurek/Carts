@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   NavLinkElement,
   NavigationItem,
   NavigationItemsContainer,
   NavigationHeader,
   Button,
-  Window,
-  Overlay,
 } from "../utils/styledComponents";
 
 const NavigationItems = ({ openProfile }) => {
@@ -20,7 +18,7 @@ const NavigationItems = ({ openProfile }) => {
         <NavigationHeader>Back</NavigationHeader>
       </NavLinkElement>
       <NavLinkElement to="/carts">
-        <NavigationItem>Excercise</NavigationItem>
+        <NavigationItem>Task</NavigationItem>
       </NavLinkElement>
       <NavLinkElement to="/content">
         <NavigationItem>Content</NavigationItem>
@@ -38,7 +36,6 @@ const NavigationItems = ({ openProfile }) => {
       >
         <i class="fa fa-question-circle" style={{ fontSize: "30px" }}></i>
       </Button>
-    
     </NavigationItemsContainer>
   );
 };

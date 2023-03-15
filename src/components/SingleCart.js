@@ -5,7 +5,6 @@ import {
   TextContainer,
   Title,
   Description,
-  List,
   Button,
   Overlay,
   Window,

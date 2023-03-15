@@ -172,7 +172,7 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
         </Error>
       )}
       {productIdError && (
-        <Error style={{ top: "24px" }}>*Product has to have its own ID*</Error>
+        <Error style={{ top: "24px" }}>*Product must have its own ID*</Error>
       )}
       {productQuantityError && (
         <Error style={{ top: "36px" }}>*Please write quantity*</Error>
