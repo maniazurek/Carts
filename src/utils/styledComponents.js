@@ -178,3 +178,5 @@ export const Error = styled.p`
   font-size: 12px;
   position: absolute;
 `;
+
+export const Anchor = styled.a``;

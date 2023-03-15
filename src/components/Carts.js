@@ -9,8 +9,9 @@ import {
   Button,
   Overlay,
 } from "../utils/styledComponents";
+import Profile from "./Profile";
 
-const Carts = () => {
+const Carts = ({ isProfileOpen, closeProfile }) => {
   const [cartsData, setCartsData] = useState([]);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -99,6 +100,11 @@ const Carts = () => {
       >
         <i className="fa fa-plus"></i>
       </Button>
+      {isProfileOpen && (
+        <Overlay>
+          <Profile closeProfile={closeProfile} />
+        </Overlay>
+      )}
     </MainLayout>
   );
 };

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NavLinkElement,
   NavigationItem,
   NavigationItemsContainer,
   NavigationHeader,
   Button,
+  Window,
+  Overlay,
 } from "../utils/styledComponents";
 
-const NavigationItems = () => {
+const NavigationItems = ({ openProfile }) => {
   return (
     <NavigationItemsContainer>
       <NavLinkElement to="/">
@@ -24,6 +26,7 @@ const NavigationItems = () => {
         <NavigationItem>Content</NavigationItem>
       </NavLinkElement>
       <Button
+        onClick={openProfile}
         style={{
           borderColor: "#fff",
           width: "30px",
@@ -35,6 +38,7 @@ const NavigationItems = () => {
       >
         <i class="fa fa-question-circle" style={{ fontSize: "30px" }}></i>
       </Button>
+    
     </NavigationItemsContainer>
   );
 };
