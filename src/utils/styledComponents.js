@@ -149,3 +149,32 @@ export const NavigationItem = styled.h3`
   margin: 0px;
   padding: px;
 `;
+
+export const Form = styled.form`
+  display: flex;
+`;
+
+export const Input = styled.input`
+  border: none;
+  outline: none;
+  background-color: #eef3f6;
+`;
+
+export const Select = styled.select``;
+
+export const Option = styled.option``;
+
+export const ListContainer = styled.ul`
+  height: 55px;
+  overflowy: auto;
+  margin: 0;
+  width: 85%;
+`;
+
+export const ListElement = styled.li``;
+
+export const Error = styled.p`
+  color: red;
+  font-size: 12px;
+  position: absolute;
+`;

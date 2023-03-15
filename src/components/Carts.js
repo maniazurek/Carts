@@ -53,6 +53,8 @@ const Carts = () => {
     setIsFormOpen(false);
   };
 
+  console.log(cartsData);
+
   return (
     <MainLayout>
       <Header>LIST OF CARTS:</Header>

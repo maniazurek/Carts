@@ -30,3 +30,8 @@ a:link {
 .react-pdf__Page__textContent {
   display: none;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
