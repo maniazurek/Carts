@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import {
   MainLayout,
@@ -8,6 +8,33 @@ import {
 } from "../utils/styledComponents";
 
 const Welcome = () => {
+  const [items, setItems] = useState([]);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+
+  // useEffect(() => {
+  //   const addNewItem = () => {
+  //     const newItem = {
+  //       nameItem: name,
+  //       priceItem: price,
+  //     };
+  //     setItems([...items, newItem]);
+  //   };
+  //   addNewItem();
+  // }, []);
+
+  const addNewItem = (event) => {
+    event.preventDefault();
+    const newItem = {
+      nameItem: name,
+      priceItem: price,
+    };
+    // setItems([...items, newItem]);
+    console.log(newItem);
+    setItems([...items, newItem]);
+    console.log(items)
+  };
+
   const navigate = useNavigate();
 
   const onStart = () => {
@@ -15,6 +42,14 @@ const Welcome = () => {
   };
   return (
     <MainLayout style={{ margin: "0", paddingLeft: "80px" }}>
+      <form onSubmit={addNewItem}>
+        <input value={name} onChange={(event) => setName(event.target.value)} />
+        <input
+          value={price}
+          onChange={(event) => setPrice(event.target.value)}
+        />
+        <button type="submit">Add Item</button>
+      </form>
       <MainTitle style={{ marginTop: "100px" }}>Hello!</MainTitle>
       <MainTitle>
         Please click the button below to see the result of the recruitment task:

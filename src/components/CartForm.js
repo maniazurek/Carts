@@ -3,12 +3,21 @@ import { Window, Button, CloseButton, Title } from "../utils/styledComponents";
 
 const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
   const [userId, setUserId] = useState("");
-  const [products, setProducts] = useState([{}]);
+  const [productId, setProductId] = useState("");
+  const [productQuantity, setProductQuantity] = useState("");
+  const [products, setProducts] = useState([]);
 
   const addNewCart = (event) => {
+    const newProduct = {
+      id: productId,
+      quantity: productQuantity,
+    };
+    setProducts([...products, newProduct]);
+    console.log(newProduct);
     addCartData(userId, products);
     handleCloseForm();
   };
+
   return (
     <Window>
       <form onSubmit={addNewCart}>
@@ -19,6 +28,15 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
           value={userId}
           onChange={(event) => setUserId(event.target.value)}
         />
+        <input
+          value={productId}
+          onChange={(event) => setProductId(event.target.value)}
+        />
+        <input
+          value={productQuantity}
+          onChange={(event) => setProductQuantity(event.target.value)}
+        />
+
         <select>
           {cartsData.map((product) => {
             return <option value={product.id}>{product.id}</option>;
