@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import { MainLayout } from "../utils/styledComponents";
+import { MainLayout, Overlay } from "../utils/styledComponents";
+import Profile from "./Profile";
 
-const Content = () => {
+const Content = ({ isProfileOpen, closeProfile }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -11,14 +12,19 @@ const Content = () => {
   }
 
   useEffect(() => {
-    pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
+    pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
   });
   return (
     <MainLayout>
       <Document file="/Zadanie.pdf" onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
-          </MainLayout>
+      {isProfileOpen && (
+        <Overlay>
+          <Profile closeProfile={closeProfile} />
+        </Overlay>
+      )}
+    </MainLayout>
   );
 };
 

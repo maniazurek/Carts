@@ -19,7 +19,7 @@ const Main = () => {
   return (
     <>
       <Routes>
-        <Route path="/content" element={<Content />} />
+        <Route path="/content" element={<Content isProfileOpen={isProfileOpen} closeProfile={closeProfile}/>} />
         <Route
           path="/carts"
           element={

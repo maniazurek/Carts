@@ -164,11 +164,19 @@ const CartForm = ({ handleCloseForm, addCartData, cartsData }) => {
         </ListContainer>
       </TextContainer>
       {userIdError && (
-        <Error style={{ top: "10px" }}>*Please write User ID*</Error>
+        <Error style={{ top: "0" }}>*Please write User ID*</Error>
       )}
-      {productsError && <Error>*Cart must contain at least one product*</Error>}
-      {productIdError && <Error>*Product has to have its own ID*</Error>}
-      {productQuantityError && <Error>*Please write quantity*</Error>}
+      {productsError && (
+        <Error style={{ top: "12px" }}>
+          *Cart must contain at least one product*
+        </Error>
+      )}
+      {productIdError && (
+        <Error style={{ top: "24px" }}>*Product has to have its own ID*</Error>
+      )}
+      {productQuantityError && (
+        <Error style={{ top: "36px" }}>*Please write quantity*</Error>
+      )}
     </Window>
   );
 };

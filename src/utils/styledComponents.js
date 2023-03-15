@@ -166,7 +166,7 @@ export const Option = styled.option``;
 
 export const ListContainer = styled.ul`
   height: 55px;
-  overflowy: auto;
+  overflow-y: auto;
   margin: 0;
   width: 85%;
 `;
