@@ -11,7 +11,9 @@ const Profile = ({ closeProfile }) => {
   return (
     <Window>
       <Header>Details:</Header>
-      <Anchor href="https://dummyjson.com/carts">BASE API URL</Anchor>
+      <Anchor href="https://dummyjson.com/carts" target="_blank">
+        BASE API URL
+      </Anchor>
       <Anchor href="https://github.com/maniazurek/Carts" target="_blank">
         GitHub/Carts
       </Anchor>
