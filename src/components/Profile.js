@@ -10,12 +10,10 @@ import {
 const Profile = ({ closeProfile }) => {
   return (
     <Window>
-      <Header>Contact details:</Header>
-      <Title>Marianna Żurek</Title>
-      <Title>zurekmarianna@gmail.com</Title>
-      <Title>+48 798 033 947</Title>
-      <Anchor href="https://github.com/maniazurek" target="_blank">
-        GitHub
+      <Header>Details:</Header>
+      <Anchor href="https://dummyjson.com/carts">BASE API URL</Anchor>
+      <Anchor href="https://github.com/maniazurek/Carts" target="_blank">
+        GitHub/Carts
       </Anchor>
       <CloseButton>
         <span class="fa fa-close" onClick={closeProfile}></span>

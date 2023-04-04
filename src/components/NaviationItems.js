@@ -20,9 +20,9 @@ const NavigationItems = ({ openProfile }) => {
       <NavLinkElement to="/carts">
         <NavigationItem>Task</NavigationItem>
       </NavLinkElement>
-      <NavLinkElement to="/content">
+      {/* <NavLinkElement to="/content">
         <NavigationItem>Content</NavigationItem>
-      </NavLinkElement>
+      </NavLinkElement> */}
       <Button
         onClick={openProfile}
         style={{

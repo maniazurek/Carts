@@ -17,13 +17,13 @@ const Welcome = () => {
     <MainLayout style={{ margin: "0", paddingLeft: "80px" }}>
       <MainTitle style={{ marginTop: "100px" }}>Hello!</MainTitle>
       <MainTitle>
-        Please click the button below to see the result of the recruitment task:
+        Click the button below to see the list of carts:
       </MainTitle>
       <Button
         onClick={onStart}
         style={{ fontSize: "25px", padding: "10px", marginTop: "35px" }}
       >
-        <Title>See the result</Title>
+        <Title>All carts</Title>
         <span
           class="fas fa-angle-double-right"
           style={{ fontSize: "23px" }}
