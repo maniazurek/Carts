@@ -11,7 +11,7 @@ const LineGraph = ({ listOfProducts }) => {
     datasets: [
       {
         label: "Price",
-        data: listOfProducts.map((data) => data.total / data.quantity),
+        data: listOfProducts.map((data) => data.price),
       },
       {
         label: "Discounted Price",
